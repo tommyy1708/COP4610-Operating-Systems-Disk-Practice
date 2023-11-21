@@ -17,7 +17,7 @@ function App() {
       children: (
         <p>
           {' '}
-          1. The total capacity formulation: Tracks {nTracks} *
+          Step1. The total capacity formulation: Tracks {nTracks} *
           Sectors {nSectors} * Surface {nSurface} * Size Of per
           Sectors {nSectorSize} ≈{' '}
           {nTracks * nSectors * nSurface * nSectorSize} Bytes ({' '}
@@ -35,7 +35,7 @@ function App() {
         '2.Determine the number of seek operation to read the entire disk?',
       children: (
         <p>
-          1. We need to know the total number of tracks on the disk,
+          Step1. We need to know the total number of tracks on the disk,
           the number of tracks is {nTracks}. <br></br>2. We need to
           know the time for each seek takes, it's {nSeekTime}.{' '}
           <br></br>The formulation: Total Tracks {nTracks} - 1 * Time
@@ -50,12 +50,12 @@ function App() {
       label: '3.How much data in bytes each track has?',
       children: (
         <p>
-          1.We need to know how many sectors to each track have, is{' '}
+          Step1.We need to know how many sectors to each track have, is{' '}
           {nSectors}.<br></br>
-          2.We need to know the size for each sectors, is{' '}
+          Step2.We need to know the size for each sectors, is{' '}
           {nSectorSize}bytes.
           <br></br>
-          3.Use formulation: Sectors {nSectors} * Size of Sector{' '}
+          Step3.Use formulation: Sectors {nSectors} * Size of Sector{' '}
           {nSectorSize} = {nSectorSize * nSectors} bytes (
           {(nSectorSize * nSectors) / 1000000} MB)
         </p>
@@ -66,9 +66,9 @@ function App() {
       label: '4.How long 1 rotation takes?',
       children: (
         <p>
-          1.We known the disk rotates at {nRotation} rpm per minute .
+          Step1.We known the disk rotates at {nRotation} rpm per minute .
           <br></br>
-          2.Convert minute to second, we can use 60 second /{' '}
+          Step2.Convert minute to second, we can use 60 second /{' '}
           {nRotation} * rotates 1 ≈ {60 / nRotation} second ={' '}
           {(60 / nRotation) * 1000}ms
           <br></br>
@@ -93,22 +93,22 @@ function App() {
         '6.Determine the data transfer rate per track (MB/second).',
       children: (
         <p>
-          1. We need to know the time unit, is second.
+          Step1. We need to know the time unit, is second.
           <br />
-          2. In question 5, we known how long to data transfer per
+          Step2. In question 5, we known how long to data transfer per
           rotation which is {(60 / nRotation) * 1000}ms.
           <br />
-          3. We need to know how many ms from a second, it's 1 second
+          Step3. We need to know how many ms from a second, it's 1 second
           / {60 / nRotation} second ≈{' '}
           {(1 / (60 / nRotation)).toFixed(2)} rotates / second.
           <br />
-          4. Using the formulation to get how many bytes in each
+          Step4. Using the formulation to get how many bytes in each
           rotates, it equal size of track. We can see the question 3,
           the track size is Sectors {nSectors} * Size of Sector{' '}
           {nSectorSize} = {nSectorSize * nSectors} bytes (
           {(nSectorSize * nSectors) / 1000000} MB).
           <br />
-          5. Now we use number of rotates in second (
+          Step5. Now we use number of rotates in second (
           {(1 / (60 / nRotation)).toFixed(2)}) times size of one
           rotate ({(nSectorSize * nSectors) / 1000000} MB), finally
           the result is{' '}
@@ -127,10 +127,10 @@ function App() {
         '7.What is the average rotational delay of this disk? (half rotation)',
       children: (
         <p>
-          1. We known 1 rotation takes {(60 / nRotation) * 1000}ms,
+          Step1. We known 1 rotation takes {(60 / nRotation) * 1000}ms,
           this question to ask how long does half oration takes.
           <br />
-          2. The formulation : {(60 / nRotation) * 1000} ms * 1/2 ={' '}
+          Step2. The formulation : {(60 / nRotation) * 1000} ms * 1/2 ={' '}
           {((60 / nRotation) * 1000) / 2} ms
         </p>
       ),
@@ -140,15 +140,15 @@ function App() {
       label: '8. What is the transfer time of 1 sector?',
       children: (
         <p>
-          1. We known 1 rotation of track takes{' '}
+          Step1. We known 1 rotation of track takes{' '}
           {(60 / nRotation) * 1000}ms (References from question 4).
           <br />
-          2. And 1 track includes {nSectors} sectors.
+          Step2. And 1 track includes {nSectors} sectors.
           <br />
-          3. So each sector should takes 1/{nSectors} represent 1
+          Step3. So each sector should takes 1/{nSectors} represent 1
           sectors' time.
           <br />
-          4. The formulation : 1/{nSectors} *{' '}
+          Step4. The formulation : 1/{nSectors} *{' '}
           {(60 / nRotation) * 1000}ms ≈
           {((1 / nSectors) * ((60 / nRotation) * 1000)).toFixed(3)} ms
         </p>
