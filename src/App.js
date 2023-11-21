@@ -160,7 +160,7 @@ function App() {
       <div className="projectFrame">
         <div className="header">
           <h3>COP 4610: Operating Systems Principles</h3>
-          <h4>Disk Practice</h4>
+          <h4>Chapter Mass-Storage Systems Disk Practice</h4>
         </div>
         <Divider></Divider>
         <div className="cards">
