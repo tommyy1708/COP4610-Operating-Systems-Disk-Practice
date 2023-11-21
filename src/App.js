@@ -192,6 +192,7 @@ function App() {
               <p>Surface = {nSurface}</p>
               <p>Rotation = {nRotation} rpm/min</p>
               <p>Seek time = {nSeekTime}ms</p>
+              <p>1MB = 1,000,000Bytes</p>
             </Card>
             <Card
               title="Variables"
